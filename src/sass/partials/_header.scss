@@ -1,0 +1,89 @@
+// --------- Global header styles --------- //
+.header {
+  background-color: #f0f0f0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// --------- Site navigation --------- //
+.nav-list {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.current {
+  color: $green-full;
+}
+
+// --------- Header Logo --------- //
+.header-logo {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: -0.045rem;
+}
+.header-logo-span {
+  color: $green-full;
+}
+
+// --------- Utility bar --------- //
+.utility-bar {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.cart-icon {
+  fill: transparent;
+  stroke: getColor('black-full');
+}
+
+// Switch theme (toggle)
+.switch {
+  display: block;
+  width: 46px;
+  height: 20px;
+  position: relative;
+}
+
+.checkbox {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: #aaa;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  transform: translateX(0);
+  transition: all 0.5s ease-out;
+}
+
+.checkbox:checked + .slider {
+  background-color: $green-full;
+}
+
+.checkbox:checked + .slider::before {
+  transform: translateX(26px);
+}
